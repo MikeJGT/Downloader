@@ -42,9 +42,9 @@ export class VideoComponent {
     this.videoInfo = await this.infoSV.video(this.id);
 
 
-    console.log('AudioVideo', this.audioVideo);
-    console.log('Video', this.audioVideo[1][0].itag);
-    console.log('Audio', this.audioVideo[0][0].itag);
+    //console.log('AudioVideo', this.audioVideo);
+    //console.log('Video', this.audioVideo[1][0].itag);
+    //console.log('Audio', this.audioVideo[0][0].itag);
 
     this.formulario.patchValue({
       video: 'video',
@@ -86,7 +86,7 @@ export class VideoComponent {
   //seleccionar calidad
   async download(itag: any) {
 
-    console.log('Formulario', itag)
+    //console.log('Formulario', itag)
 
 
     this.downloadSV.download(this.id, itag).subscribe((blob) => {
