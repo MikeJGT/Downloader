@@ -15,7 +15,7 @@ export class InformationService {
   key: String;
   //url.split('=')[1]
   constructor(private httpCli: HttpClient) {
-    this.url = 'http://localhost:3000';
+    this.url = 'https://downloader-otvt.onrender.com:3000';
     this.id = 'zoakilGMF0E';
     this.info = '/api/info';
     this.downloade = '/api/download';

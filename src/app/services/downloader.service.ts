@@ -13,7 +13,7 @@ export class DownloaderService {
   downloade: String;
 
   constructor(private httpCli: HttpClient) {
-    this.url = 'http://localhost:3000';
+    this.url = 'https://downloader-otvt.onrender.com:3000';
     this.id = 'zoakilGMF0E';
     this.info = '/api/info';
 
