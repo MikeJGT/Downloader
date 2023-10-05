@@ -1,0 +1,32 @@
+<div class="wrapheader">
+    <app-header></app-header>
+
+    <div class="wrapper">
+        <div class="container">
+
+            <form class="formulario" #formulario="ngForm" (ngSubmit)="search(formulario)">
+                <span class="search">
+                    <input placeholder="search" type="text" name="search" ngModel>
+                </span>
+
+                <input class="enviar" type="submit" value="Buscar">
+
+            </form>
+        </div>
+        <div class="videoList">
+
+            <div class="videoCard" *ngFor="let item of this.busqueda;index as i" (click)="goToVideo(item.id.videoId)">
+
+                <div class="picture" [ngStyle]="{'background-image':'url(' + item.snippet.thumbnails.medium.url + ')'}">
+                    <!-- <img [src]="item.snippet.thumbnails.medium.url" alt=""> -->
+                </div>
+                <div class="info">
+                    <p>{{item.snippet.title}}</p>
+                    <br>
+                    <p>Duracion: {{this.time[i]}}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<p>test works!</p>
+
+<form #formulario="ngForm" (ngSubmit)="search(formulario)">
+    <input type="text" name="search" ngModel>
+    <input type="submit" value="Enviar">
+</form>
+{{formulario.value.search}}
+
+<div *ngFor="let item of this.busqueda;index as i" (click)="goToVideo(item.id.videoId)">
+
+    <img [src]="item.snippet.thumbnails.default.url" alt="">
+    Titulo: {{item.snippet.title}}
+    Id: {{item.id.videoId}}
+    Duracion: {{this.time[i]}}
+
+</div>

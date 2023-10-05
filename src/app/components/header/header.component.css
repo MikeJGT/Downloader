@@ -1,0 +1,22 @@
+.wrapper {
+    width: 100vw;
+    height: 75px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.wrapper div {
+    color: wheat;
+    margin-left: 50px;
+    width: 100px;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

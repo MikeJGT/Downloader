@@ -1,0 +1,5 @@
+<div class="wrapper">
+    <div *ngIf="this.router.url==='/'" routerLink="search">Search</div>
+    <div *ngIf="this.router.url==='/search' || this.router.url==='/video'" routerLink="/">Home</div>
+    <div *ngIf="this.router.url==='/video' " routerLink="/search">Search</div>
+</div>
