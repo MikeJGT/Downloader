@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { identity } from 'rxjs';
 
 
 @Injectable({
@@ -28,6 +29,7 @@ export class DownloaderService {
     // )
     return this.httpCli.get(`${this.url}${this.downloade}/${id}/${itag}`
       , {
+        // headers: { 'Accept-Encoding': '*' },
         responseType: 'blob'
       }
     )
