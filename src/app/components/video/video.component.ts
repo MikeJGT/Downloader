@@ -28,10 +28,19 @@ export class VideoComponent {
     this.formulario = new FormGroup({
       audio: new FormControl(),
       video: new FormControl()
-    })
+    });
+    this.id = '';
+    this.audioVideo = '';
+    this.info = '';
+    this.videoInfo = '';
   }
 
   async ngOnInit() {
+
+    //setTimeout
+
+
+
     this.id = localStorage.getItem('video_id') || 'NO ID YET';
 
     this.url = `https://www.youtube.com/embed/${this.id}`;
