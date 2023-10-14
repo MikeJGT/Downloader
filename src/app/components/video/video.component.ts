@@ -19,6 +19,7 @@ export class VideoComponent {
   info: any;
   videoInfo: any;
   formulario: FormGroup;
+  showFlag: boolean;
   constructor(
     private sanitas: DomSanitizer,
     private infoSV: InformationService,
@@ -29,27 +30,25 @@ export class VideoComponent {
       audio: new FormControl(),
       video: new FormControl()
     });
-    this.id = '';
-    this.audioVideo = '';
-    this.info = '';
-    this.videoInfo = '';
+    this.id = localStorage.getItem('video_id');
+    this.audioVideo = {};
+    this.info = {};
+    this.videoInfo = {};
+    this.showFlag = false;
   }
 
   async ngOnInit() {
 
     //setTimeout
-
-
-
-    this.id = localStorage.getItem('video_id') || 'NO ID YET';
+    //this.id = localStorage.getItem('video_id');
 
     this.url = `https://www.youtube.com/embed/${this.id}`;
 
     this.safeUrl = this.sanitas.bypassSecurityTrustResourceUrl(this.url);
+
     this.audioVideo = await this.infoSV.audioVideo(this.id);
     this.info = await this.infoSV.information(this.id);
     this.videoInfo = await this.infoSV.video(this.id);
-
 
     //console.log('AudioVideo', this.audioVideo);
     //console.log('Video', this.audioVideo[1][0].itag);
@@ -90,7 +89,7 @@ export class VideoComponent {
   //     audio: 'audio'
   //   });
 
-  // }
+  //}
 
   //seleccionar calidad
   async download(itag: any) {
@@ -102,6 +101,10 @@ export class VideoComponent {
       console.log(blob)
       saveAs(blob, `${this.id}.mp4`);
     })
+  }
 
+  show() {
+    this.showFlag = !this.showFlag;
+    return this.showFlag;
   }
 }

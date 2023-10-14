@@ -15,7 +15,9 @@ export class InformationService {
   key: String;
   //url.split('=')[1]
   constructor(private httpCli: HttpClient) {
-    this.url = 'https://downloader-otvt.onrender.com';
+    // this.url = 'https://downloader-otvt.onrender.com';
+    this.url = 'https://byron-bay-tasmanian-devil-xdhf.2.ie-1.fl0.io'
+    // this.url = 'http://localhost:3000';
     this.id = 'zoakilGMF0E';
     this.info = '/api/info';
     this.downloade = '/api/download';

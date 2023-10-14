@@ -5,12 +5,21 @@
         <div class="container">
             <div class="video">
                 <div class="mi-iframe">
+                    <!-- <div class="mi-iframe loading">
+                        <mat-spinner></mat-spinner>
+                        <h2>Loading . . .</h2>
+                    </div> -->
+
                     <iframe id="ytplayer" type="text/html" width="100%" height="100%" [src]="this.safeUrl"
                         frameborder="0" allowfullscreen=""></iframe>
                 </div>
                 <p>{{this.info.title}}</p>
                 <br>
-                <p>{{this.info.description}}</p>
+                <div class="description" [ngStyle]="this.showFlag?{'height':'auto'}:{'height':'50px'}">
+                    <p>{{this.info.description}}</p>
+                </div>
+                <div class="showMore" (click)="show()" *ngIf="!this.showFlag">Show more . . .</div>
+                <div class="showMore" (click)="show()" *ngIf="this.showFlag">Show less . . .</div>
             </div>
             <div class="formularios">
                 <form [formGroup]="formulario" (ngSubmit)="download(formulario.value.video)">
@@ -25,7 +34,7 @@
 
 
                     <span>
-                        <input class="enviar" type="submit" value="Descargar">
+                        <input class="enviar" type="submit" value="Download">
                     </span>
                 </form>
                 <br>
@@ -38,7 +47,7 @@
                         </option>
                     </select>
                     <span>
-                        <input class="enviar" type="submit" value="Descargar">
+                        <input class="enviar" type="submit" value="Download">
                     </span>
 
                 </form>

@@ -51,7 +51,7 @@ export class SearchComponent {
     })
     //console.log('Busqueda', this.busqueda)
     this.long = this.busqueda.length - 1;
-    this.videoTime(this.busqueda);
+    //this.videoTime(this.busqueda);
 
     //replace(/[PT]/g,'')
   }
@@ -59,28 +59,29 @@ export class SearchComponent {
 
 
 
-  async mockSearch(formulario: any) {
-    //const ytbSearch = await this.infoSV.search(formulario.value.search);
-    const ytbSearch = JSON.parse(localStorage.getItem('search')!);
-    //console.log('LOCAL STORAGE', ytbSearch)
-    let videos: any[] = [];
-    //let videoInfo = await this.infoSV.video('zoakilGMF0E');
-    //console.log('videos', videoInfo);
+  // async mockSearch(formulario: any) {
+  //   //const ytbSearch = await this.infoSV.search(formulario.value.search);
+  //   const ytbSearch = JSON.parse(localStorage.getItem('search')!);
+  //   console.log('LOCAL STORAGE', ytbSearch)
+  //   let videos: any[] = [];
+  //   //let videoInfo = await this.infoSV.video('zoakilGMF0E');
+  //   //console.log('videos', videoInfo);
 
-    //console.log('SearchValue', ytbSearch.items);
-    this.busqueda = ytbSearch.filter((item: any) => {
-      return item.snippet.liveBroadcastContent !== 'live';
-    })
-    // localStorage.setItem('search', JSON.stringify(this.busqueda));
-    //console.log('Busqueda', this.busqueda)
-    this.long = this.busqueda.length - 1;
-    // this.videoTime(this.busqueda);
+  //   //console.log('SearchValue', ytbSearch.items);
+  //   this.busqueda = ytbSearch.filter((item: any) => {
+  //     return item.snippet.liveBroadcastContent !== 'live';
+  //   })
+  //   //localStorage.setItem('search', JSON.stringify(this.busqueda));
+  //   //console.log('Busqueda', this.busqueda)
+  //   this.long = this.busqueda.length - 1;
+  //   // this.videoTime(this.busqueda);
 
-    //replace(/[PT]/g,'')
-  }
+  //   //replace(/[PT]/g,'')
+  // }
 
 
   async goToVideo(id: any) {
+    //testing
     localStorage.setItem('video_id', id);
 
     //testing

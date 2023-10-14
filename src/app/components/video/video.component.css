@@ -5,7 +5,7 @@
 }
 
 .wrapperHeader {
-    background-color: rgb(34, 32, 32);
+    background-color: black;
 }
 
 .wrapper {
@@ -32,6 +32,9 @@ iframe {
     width: 100%;
     padding-bottom: 56.25%;
     position: relative;
+    background-image: url('../../../assets/DzUh.gif');
+    background-position: center;
+    background-size: contain;
 }
 
 iframe {
@@ -41,7 +44,7 @@ iframe {
 }
 
 .formularios {
-    margin-top: 50px;
+    margin: 50px 0px;
 }
 
 
@@ -52,34 +55,59 @@ iframe {
 }
 
 .enviar {
-    background-color: rgb(34, 32, 32);
+    background-color: black;
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 2px;
+    padding: 4px 10px;
     cursor: pointer;
 }
 
 span {
     display: inline-block;
     border-radius: 5px;
-    padding: 2px;
-    background: linear-gradient(to right, rgba(238, 113, 113, 1) 1%, rgba(246, 215, 148, 1));
+    padding: 1px;
+    background: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
     ;
     margin-left: 10px;
 }
 
 .selector {
-    background: rgb(34, 32, 32);
+    background: black;
     color: white;
-    padding: 2px;
+    padding: 3px 10px;
     border-radius: 5px;
     margin-left: 1px;
 }
 
 option {
     height: 40px;
-    background: rgb(34, 32, 32);
+    background: black;
+}
+
+.description {
+    height: 50px;
+    overflow: scroll;
+}
+
+.showMore {
+    color: #85FFBD;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    position: absolute;
+    z-index: 0;
+}
+
+.loading h2 {
+    margin-top: 50px;
 }
 
 
@@ -105,7 +133,4 @@ option {
         height: auto;
     }
 
-    .formularios {
-        margin-bottom: 50px;
-    }
 }
