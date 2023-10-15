@@ -100,6 +100,7 @@ export class VideoComponent {
     this.downloadSV.download(this.id, itag).subscribe((blob) => {
       console.log(blob)
       saveAs(blob, `${this.id}.mp4`);
+      alert('Download already start, wait a few seconds please.')
     })
   }
 
