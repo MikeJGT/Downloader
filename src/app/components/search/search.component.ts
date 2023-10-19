@@ -57,9 +57,9 @@ export class SearchComponent {
     //let videoInfo = await this.infoSV.video('zoakilGMF0E');
     //console.log('videos', videoInfo);
 
-    //console.log('SearchValue', ytbSearch.items);
+    console.log('SearchValue', ytbSearch.items);
     this.busqueda = ytbSearch.items.filter((item: any) => {
-      return item.snippet.liveBroadcastContent !== 'live';
+      return item.snippet.liveBroadcastContent !== 'live' && item.id.kind === "youtube#video";
     })
     //console.log('Busqueda', this.busqueda)
     this.long = this.busqueda.length - 1;
