@@ -3,7 +3,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { DownloaderService } from 'src/app/services/downloader.service';
 import { InformationService } from 'src/app/services/information.service';
 import { saveAs } from 'file-saver';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-video',
@@ -27,8 +27,8 @@ export class VideoComponent {
   ) {
     //this.token = '';
     this.formulario = new FormGroup({
-      audio: new FormControl(),
-      video: new FormControl()
+      audio: new FormControl('', [Validators.required]),
+      video: new FormControl('', [Validators.required])
     });
     this.id = localStorage.getItem('video_id');
     this.audioVideo = {};
@@ -55,9 +55,12 @@ export class VideoComponent {
     //console.log('Audio', this.audioVideo[0][0].itag);
 
     this.formulario.patchValue({
-      video: 'video',
-      audio: 'audio'
+      video: '',
+      audio: ''
     });
+
+    // console.log('Formulario', this.formulario)
+    // console.log('VALIDO?', this.formulario.controls['video'].valid)
 
   }
 
@@ -91,15 +94,28 @@ export class VideoComponent {
 
   //}
 
+
+  // ngOnInit() {
+  //   let element: any = document.getElementById('dialogo')!;
+  //   element.show();
+  //   element.addEventListener('click', () => element.close());
+  // }
+  close() {
+    this.showFlag = false;
+  }
+
   //seleccionar calidad
   async download(itag: any) {
 
-    //console.log('Formulario', itag)
-
-    alert('Download already start, wait a few seconds please.');
+    //console.log('Formulario', this.formulario)
+    let element: any = document.getElementById('dialogo')!;
+    this.showFlag = true;
+    element.show();
+    element.addEventListener('click', () => element.close());
+    //alert('Download already start, wait a few seconds please.');
 
     this.downloadSV.download(this.id, itag).subscribe((blob) => {
-      console.log(blob)
+      //console.log(blob)
       saveAs(blob, `${this.id}.mp4`);
     })
   }

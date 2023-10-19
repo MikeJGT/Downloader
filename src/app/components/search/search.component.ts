@@ -15,13 +15,25 @@ export class SearchComponent {
   long: any;
   time: any;
   i: any;
+  showFlag: boolean;
 
   constructor(private infoSV: InformationService,
     private downloadSV: DownloaderService,
     private router: Router) {
     this.time = [];
     this.i = 0;
+    this.showFlag = true;
   }
+
+
+  // ngOnInit() {
+  //   let element: any = document.getElementById('dialogo')!;
+  //   element.show();
+  //   element.addEventListener('click', () => element.close());
+  // }
+  // close() {
+  //   this.showFlag = false;
+  // }
 
   async videoTime(array: any) {
     let videoInfo = await this.infoSV.video(array[this.i].id.videoId);

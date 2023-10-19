@@ -86,7 +86,7 @@ option {
 }
 
 .description {
-    height: 50px;
+    max-height: 150px;
     overflow: scroll;
 }
 
@@ -110,6 +110,55 @@ option {
     margin-top: 50px;
 }
 
+/*
+dialog
+*/
+
+
+dialog[open] {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    padding: 20px;
+    padding-bottom: 0px;
+}
+
+.dialog {
+    height: 200px;
+    position: absolute;
+    left: calc(50% - 150px);
+    top: calc(50% - 100px);
+    z-index: 999;
+    background: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+    padding: 1px;
+    display: block;
+    border-radius: 5px;
+}
+
+.mensaje {
+    height: calc(200px - 72px);
+}
+
+#dialogo>button {
+    padding: 10px 20px;
+    background-color: black;
+    border-color: #85FFBD;
+    color: white;
+    border-radius: 5px;
+    margin-left: calc(100px - 30px);
+    cursor: pointer;
+}
+
+/*
+dialog
+*/
 
 @media (min-width:760px) {
     .wrapper {
