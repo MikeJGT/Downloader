@@ -12,7 +12,6 @@ export class TestService {
   info: String;
   downloade: String;
   tipo: String;
-  //url.split('=')[1]
   constructor(private httpCli: HttpClient) {
     this.url = 'http://localhost:3000';
     this.id = 'zoakilGMF0E';
@@ -27,9 +26,6 @@ export class TestService {
     )
   }
   download() {
-    // return firstValueFrom(
-    //   this.httpCli.get<any>(`${this.url}${this.downloade}/${this.id}`)
-    // )
     return this.httpCli.get(`${this.url}${this.downloade}/${this.id}`
       , {
         responseType: 'blob'
