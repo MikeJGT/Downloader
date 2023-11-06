@@ -25,7 +25,6 @@ export class VideoComponent {
     private infoSV: InformationService,
     private downloadSV: DownloaderService
   ) {
-    //this.token = '';
     this.formulario = new FormGroup({
       audio: new FormControl('', [Validators.required]),
       video: new FormControl('', [Validators.required])
@@ -38,10 +37,6 @@ export class VideoComponent {
   }
 
   async ngOnInit() {
-
-    //setTimeout
-    //this.id = localStorage.getItem('video_id');
-
     this.url = `https://www.youtube.com/embed/${this.id}`;
 
     this.safeUrl = this.sanitas.bypassSecurityTrustResourceUrl(this.url);
@@ -50,56 +45,12 @@ export class VideoComponent {
     this.info = await this.infoSV.information(this.id);
     this.videoInfo = await this.infoSV.video(this.id);
 
-    //console.log('AudioVideo', this.audioVideo);
-    //console.log('Video', this.audioVideo[1][0].itag);
-    //console.log('Audio', this.audioVideo[0][0].itag);
-
     this.formulario.patchValue({
       video: '',
       audio: ''
     });
-
-    // console.log('Formulario', this.formulario)
-    // console.log('VALIDO?', this.formulario.controls['video'].valid)
-
   }
 
-
-  // async ngOnInit() {
-  //   this.id = localStorage.getItem('video_id') || 'NO ID YET';
-
-  //   this.url = `https://www.youtube.com/embed/${this.id}`;
-
-  //   this.safeUrl = this.sanitas.bypassSecurityTrustResourceUrl(this.url);
-
-  //   this.audioVideo = JSON.parse(localStorage.getItem('audioVideo')!);
-  //   this.info = JSON.parse(localStorage.getItem('info')!);
-  //   this.videoInfo = JSON.parse(localStorage.getItem('videoInfo')!);
-
-  //   // JSON.parse(localStorage.getItem('search')!);
-
-  //   // localStorage.setItem('videoInfo', JSON.stringify(this.videoInfo));
-  //   // localStorage.setItem('info', JSON.stringify(this.info));
-  //   // localStorage.setItem('audioVideo', JSON.stringify(this.audioVideo));
-
-
-  //   console.log('AudioVideo', this.audioVideo);
-  //   console.log('Video', this.audioVideo[1][0].itag);
-  //   console.log('Audio', this.audioVideo[0][0].itag);
-
-  //   this.formulario.patchValue({
-  //     video: 'video',
-  //     audio: 'audio'
-  //   });
-
-  //}
-
-
-  // ngOnInit() {
-  //   let element: any = document.getElementById('dialogo')!;
-  //   element.show();
-  //   element.addEventListener('click', () => element.close());
-  // }
   close() {
     this.showFlag = false;
   }
@@ -107,15 +58,12 @@ export class VideoComponent {
   //seleccionar calidad
   async download(itag: any) {
 
-    //console.log('Formulario', this.formulario)
     let element: any = document.getElementById('dialogo')!;
     this.showFlag = true;
     element.show();
     element.addEventListener('click', () => element.close());
-    //alert('Download already start, wait a few seconds please.');
 
     this.downloadSV.download(this.id, itag).subscribe((blob) => {
-      //console.log(blob)
       saveAs(blob, `${this.id}.mp4`);
     })
   }
