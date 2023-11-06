@@ -123,9 +123,6 @@ dialog[open] {
     color: white;
     border-radius: 5px;
     border: none;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
     padding: 20px;
     padding-bottom: 0px;
 }
