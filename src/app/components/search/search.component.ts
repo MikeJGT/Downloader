@@ -25,20 +25,9 @@ export class SearchComponent {
     this.showFlag = true;
   }
 
-
-  // ngOnInit() {
-  //   let element: any = document.getElementById('dialogo')!;
-  //   element.show();
-  //   element.addEventListener('click', () => element.close());
-  // }
-  // close() {
-  //   this.showFlag = false;
-  // }
-
   async videoTime(array: any) {
     let videoInfo = await this.infoSV.video(array[this.i].id.videoId);
     this.time.push(videoInfo.items[0].contentDetails.duration.replace(/[PT]/g, '').toLowerCase());
-    //console.log('VideoTime', videoInfo, this.time);
     if (this.i === this.long) {
       return;
     }
@@ -54,49 +43,17 @@ export class SearchComponent {
   async search(formulario: any) {
     const ytbSearch = await this.infoSV.search(formulario.value.search);
     let videos: any[] = [];
-    //let videoInfo = await this.infoSV.video('zoakilGMF0E');
-    //console.log('videos', videoInfo);
-
     console.log('SearchValue', ytbSearch.items);
     this.busqueda = ytbSearch.items.filter((item: any) => {
       return item.snippet.liveBroadcastContent !== 'live' && item.id.kind === "youtube#video";
     })
-    //console.log('Busqueda', this.busqueda)
     this.long = this.busqueda.length - 1;
-    //this.videoTime(this.busqueda);
 
-    //replace(/[PT]/g,'')
   }
 
 
-
-
-  // async mockSearch(formulario: any) {
-  //   //const ytbSearch = await this.infoSV.search(formulario.value.search);
-  //   const ytbSearch = JSON.parse(localStorage.getItem('search')!);
-  //   console.log('LOCAL STORAGE', ytbSearch)
-  //   let videos: any[] = [];
-  //   //let videoInfo = await this.infoSV.video('zoakilGMF0E');
-  //   //console.log('videos', videoInfo);
-
-  //   //console.log('SearchValue', ytbSearch.items);
-  //   this.busqueda = ytbSearch.filter((item: any) => {
-  //     return item.snippet.liveBroadcastContent !== 'live';
-  //   })
-  //   //localStorage.setItem('search', JSON.stringify(this.busqueda));
-  //   //console.log('Busqueda', this.busqueda)
-  //   this.long = this.busqueda.length - 1;
-  //   // this.videoTime(this.busqueda);
-
-  //   //replace(/[PT]/g,'')
-  // }
-
-
   async goToVideo(id: any) {
-    //testing
     localStorage.setItem('video_id', id);
-
-    //testing
     this.router.navigate([`/video`]);
   }
 }
