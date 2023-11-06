@@ -44,7 +44,6 @@ form {
     padding: 1px;
     display: inline-block;
     border-radius: 5px;
-    /* border-radius: 9999em; */
     font-size: 1.5rem;
 }
 
@@ -100,14 +99,7 @@ form {
     display: flex;
     flex-wrap: wrap;
     margin: 5px 0;
-    /* border: 1px solid;
-    border-image: linear-gradient(111.4deg, rgba(238, 113, 113, 1) 1%, rgba(246, 215, 148, 1)); */
     padding: 2px;
-    /*position: relative;
-    background: linear-gradient(to right, rgba(238, 113, 113, 1) 1%, rgba(246, 215, 148, 1));
-    ;
-    border-radius: 5px;
-     background: linear-gradient(to right, red, purple); */
     box-shadow: rgb(133, 255, 189, 0.35) 0px 5px 15px;
     cursor: pointer;
 }
@@ -118,8 +110,6 @@ form {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    /* border-radius: 5px 5px 0 0;
-    overflow: hidden; */
 }
 
 .info {
@@ -128,9 +118,6 @@ form {
     padding: 20px 20px;
     background-color: black;
     color: white;
-    /* border-radius: 0 0 5px 5px;
-    overflow: hidden; */
-    /* overflow: scroll; */
 }
 
 dialog[open] {
@@ -141,9 +128,6 @@ dialog[open] {
     color: white;
     border-radius: 5px;
     border: none;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
     padding: 20px;
     padding-bottom: 0px;
 }
@@ -196,10 +180,6 @@ dialog[open] {
     justify-content: center;
     -webkit-box-align: center;
     align-items: center;
-    /* background-image: url(images/bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center; */
     position: absolute;
     z-index: -1;
 }
@@ -613,7 +593,6 @@ dialog[open] {
 
     .picture {
         width: 50%;
-        /* border-radius: 5px 0 0 5px; */
     }
 
     .info {
