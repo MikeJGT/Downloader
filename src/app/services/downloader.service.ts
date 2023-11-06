@@ -15,22 +15,15 @@ export class DownloaderService {
 
   constructor(private httpCli: HttpClient) {
     this.url = 'https://byron-bay-tasmanian-devil-xdhf.2.ie-1.fl0.io';
-    //this.url = 'http://localhost:3000';
-    //this.url = 'https://downloader-otvt.onrender.com';
     this.id = 'zoakilGMF0E';
     this.info = '/api/info';
-
     this.downloade = '/api/download'
   }
 
 
   download(id: String, itag: String) {
-    // return firstValueFrom(
-    //   this.httpCli.get<any>(`${this.url}${this.downloade}/${this.id}`)
-    // )
     return this.httpCli.get(`${this.url}${this.downloade}/${id}/${itag}`
       , {
-        // headers: { 'Accept-Encoding': '*' },
         responseType: 'blob'
       }
     )
