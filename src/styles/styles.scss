@@ -1,0 +1,28 @@
+@import './importedStyles.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    @include font ($color: $text-color-base, $font-size: $font-size-large, $font-family: $font-family-titles, $font-weight: 400, $text-align: center);
+}
+
+h2 {
+    @include font ($color: $text-color-base, $font-size: $font-size-large, $font-family: $font-family-text, $font-weight: 700, $text-align: center);
+}
+
+h3 {
+    @include font ($color: $text-color-base, $font-size: $font-size-large, $font-family: $font-family-text, $text-align: center);
+}
+
+p {
+    @include font ($color: $text-color-base, $font-size: $font-size-text, $font-family: $font-family-text);
+}
+
+
+body {
+    background-color: $backgroundpageColor;
+}

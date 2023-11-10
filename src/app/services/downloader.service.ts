@@ -1,36 +1,31 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { identity } from 'rxjs';
+import { environment } from 'src/environments/environment.development';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class DownloaderService {
-
   url: String;
-  id: String;
-  info: String;
-  downloade: String;
+  apiDownload: String;
 
   constructor(private httpCli: HttpClient) {
-    this.url = 'https://byron-bay-tasmanian-devil-xdhf.2.ie-1.fl0.io';
-    //this.url = 'http://localhost:3000';
-    //this.url = 'https://downloader-otvt.onrender.com';
-    this.id = 'zoakilGMF0E';
-    this.info = '/api/info';
-
-    this.downloade = '/api/download'
+    this.url = environment.STREAMING_SERVICE_URL;
+    this.apiDownload = '/api/download'
   }
 
 
-  download(id: String, itag: String) {
-    // return firstValueFrom(
-    //   this.httpCli.get<any>(`${this.url}${this.downloade}/${this.id}`)
-    // )
-    return this.httpCli.get(`${this.url}${this.downloade}/${id}/${itag}`
+  /**
+* @description Start streaming the video from Streaming Service and download it when finish.
+* @param {String} id The Video Id.
+* @param {String} itag The Video Itag.
+* @returns {Observable<Blob>} An Observable with the video.
+*/
+  download(id: String, itag: String): Observable<Blob> {
+    return this.httpCli.get(`${this.url}${this.apiDownload}/${id}/${itag}`
       , {
-        // headers: { 'Accept-Encoding': '*' },
         responseType: 'blob'
       }
     )

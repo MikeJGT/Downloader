@@ -1,27 +1,27 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TestComponent } from './components/test/test.component';
 import { HttpClientModule } from '@angular/common/http';
-import { saveAs } from 'file-saver';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { VideoComponent } from './components/video/video.component';
-import { SearchComponent } from './components/search/search.component';
-import { HomeComponent } from './components/home/home.component';
+import { VideoComponent } from './pages/video/video.component';
+import { SearchComponent } from './pages/search/search.component';
+import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { VideoCardComponent } from './components/video-card/video-card.component';
+import { VideoListComponent } from './components/video-list/video-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent,
     VideoComponent,
     SearchComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    VideoCardComponent,
+    VideoListComponent
   ],
   imports: [
     BrowserModule,

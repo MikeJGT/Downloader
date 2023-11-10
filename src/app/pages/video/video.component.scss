@@ -1,0 +1,156 @@
+@import '../../../styles/mixins';
+
+
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+    padding: 5px;
+    position: relative;
+
+    & .container {
+        @include flexCenter($direction: column);
+        margin-top: 100px;
+    }
+}
+
+
+h2 {
+    text-align: left;
+    margin: 0;
+    margin-top: 20px;
+}
+
+.video {
+    width: 100%;
+    min-height: 300px;
+    background-image: url("../../../assets/DzUh.gif");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.ytb-contnent {
+    background-color: $backgroundpageColor;
+
+    & .mi-iframe {
+        display: block;
+        padding-bottom: 56.25%;
+        position: relative;
+        background-image: url("../../../assets/DzUh.gif");
+        background-position: center;
+        background-size: contain;
+
+        & iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    & .description {
+        max-height: 150px;
+        overflow: auto;
+    }
+}
+
+.formularios {
+    margin: 50px 0px;
+
+    & span {
+        display: inline-block;
+        border-radius: 5px;
+        padding: 1px;
+        background: $gradient;
+        margin-left: 10px;
+
+        & .enviar {
+            background-color: $backgroundpageColor;
+            color: $text-color-base;
+            border: none;
+            border-radius: 5px;
+            padding: 4px 10px;
+            cursor: pointer;
+        }
+    }
+
+    & label {
+        color: $text-color-base;
+    }
+
+    & .selector {
+        background: $backgroundpageColor;
+        color: $text-color-base;
+        padding: 3px 10px;
+        border-radius: 5px;
+        margin-left: 1px;
+
+        & option {
+            height: 40px;
+            background: $backgroundpageColor;
+        }
+    }
+}
+
+
+dialog[open] {
+    width: 250px;
+    height: 200px;
+    left: calc(50% - 150px);
+    top: calc(50% - 100px);
+    position: absolute;
+    background-color: $secondarycolor;
+    color: $text-color-base;
+    border: none;
+    border-radius: 5px;
+    padding: 20px;
+    padding-bottom: 0px;
+    z-index: 999;
+
+
+    & .mensaje {
+        position: absolute;
+        top: 30px;
+        left: 20px;
+    }
+
+    & i {
+        position: absolute;
+        top: 20px;
+        right: 5px;
+        cursor: pointer;
+        color: $text-color-base;
+    }
+
+    & button {
+        padding: 10px 20px;
+        background-color: $secondarycolor;
+        border: 1px solid $text-color-base;
+        color: $text-color-base;
+        border-radius: 5px;
+        position: absolute;
+        left: calc(50% - 30px);
+        bottom: 10px;
+        cursor: pointer;
+    }
+}
+
+
+
+
+@include medium($width: min-width) {
+    .wrapper {
+        @include flexCenter();
+    }
+
+    .container {
+        width: 80%;
+    }
+}
+
+@include large($width: min-width) {
+    .container {
+        width: 952px;
+        height: auto;
+    }
+}

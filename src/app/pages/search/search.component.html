@@ -1,0 +1,10 @@
+<div class="wrapper">
+    <div class="container">
+        <form class="formulario" #formulario="ngForm" (ngSubmit)="search(formulario)">
+            <span>
+                <input placeholder="Which video do you want to download?" type="text" name="search" ngModel>
+            </span>
+        </form>
+    </div>
+    <video-list [lista]="this.busqueda"></video-list>
+</div>

@@ -1,0 +1,131 @@
+@import '../../../styles/mixins';
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px;
+    background-color: black;
+}
+
+.container {
+    width: 100%;
+}
+
+.banner {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    & h1 {
+        @include font ($font-size: 2.5rem, $font-family: $font-family-titles, $text-align: center);
+        background-color: $gradient-background;
+        background-image: $gradient;
+        background-size: 100%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-background-clip: text;
+        -moz-text-fill-color: transparent;
+        background-clip: text;
+        margin: 0;
+    }
+
+    & .arrow-down {
+        position: absolute;
+        height: 40px;
+        margin: 0 0 0 -30px;
+        left: 50%;
+        bottom: 0px;
+        animation: arrow 0.5s 1s infinite ease-out alternate;
+        -webkit-animation: arrow 0.5s 1s infinite ease-out alternate;
+        color: $gradient-background;
+
+        & h3 {
+            opacity: 0.5;
+            font-size: 1rem;
+            color: $gradient-background;
+        }
+    }
+
+}
+
+@keyframes arrow {
+    0% {
+        bottom: 0px;
+    }
+
+    100% {
+        bottom: 40px;
+    }
+}
+
+@-webkit-keyframes arrow {
+    0% {
+        bottom: 0px;
+    }
+
+    100% {
+        bottom: 40px;
+    }
+}
+
+
+.about {
+    width: 100%;
+    min-height: 100vh;
+    text-align: center;
+
+    & .info {
+        margin-top: 20px;
+    }
+
+    & span {
+        display: inline-block;
+        border-radius: 5px;
+        padding: 2px;
+        background-color: $gradient-background;
+        background-image: $gradient;
+        margin-bottom: 50px;
+
+        & .boton {
+            background-color: $backgroundpageColor;
+            color: $text-color-base;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 20px;
+            cursor: pointer;
+        }
+    }
+}
+
+
+@include small($width: min-width) {
+    .wrapper {
+        height: 100%;
+        @include flexCenter();
+    }
+
+    .container {
+        width: 80%;
+    }
+}
+
+@include medium($width: min-width) {
+    .container {
+        width: 60%;
+    }
+}
+
+@include large($width: min-width) {
+    .container {
+        width: 718px;
+    }
+}

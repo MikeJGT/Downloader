@@ -1,0 +1,7 @@
+<div class="videoCard" (click)="goToVideo(this.video.id.videoId)">
+    <div class="picture" [ngStyle]="{'background-image':'url(' + this.video.snippet.thumbnails.medium.url + ')'}">
+    </div>
+    <div class="info">
+        <p>{{this.video.snippet.title}}</p>
+    </div>
+</div>

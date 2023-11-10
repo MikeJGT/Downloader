@@ -1,0 +1,66 @@
+@import './variables';
+
+
+//////////////////////////////
+//
+//  Common Mixins
+//
+//////////////////////////////
+
+/*
+*Description : Use to center elements with flex.
+*/
+@mixin flexCenter($justify: center, $align: center, $direction: row, $wrap: nowrap) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+}
+
+/*
+*Description: Use this mixin to set the font propeties
+*/
+@mixin font ($color: $text-color-base, $font-size: $font-size-text, $font-weight: 400, $font-style: normal, $font-family: $font-family-text, $text-align: left) {
+    color: $color;
+    font: $font-style $font-weight $font-size $font-family;
+    text-align: $text-align;
+}
+
+
+
+//////////////////////////////
+//
+//  Media Querys
+//
+//////////////////////////////
+
+/*
+*Description: Small media query.
+*Params ($width) The propety width, may be max-width or min-width.
+*/
+@mixin small($width: max-width) {
+    @media screen and ($width: $breakpoint-s) {
+        @content;
+    }
+}
+
+/*
+*Description: Medium media query.
+*Params ($width) The propety width, may be max-width or min-width.
+*/
+@mixin medium($width: max-width) {
+    @media screen and ($width: $breakpoint-m) {
+        @content;
+    }
+}
+
+/*
+*Description: Large media query.
+*Params ($width) The propety width, may be max-width or min-width.
+*/
+@mixin large($width: max-width) {
+    @media screen and ($width: $breakpoint-lg) {
+        @content;
+    }
+}

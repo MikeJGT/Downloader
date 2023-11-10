@@ -1,0 +1,41 @@
+//////////////////////////////
+//                          
+//  Media Querys Sizes      
+//                          
+//////////////////////////////
+
+$breakpoint-s: 480px;
+$breakpoint-m: 768px;
+$breakpoint-lg: 1024px;
+
+
+//////////////////////////////
+//
+//  Base Colors
+//
+//////////////////////////////
+
+$primarycolor: black;
+$secondarycolor: #19191a;
+$tertiaryColor: #373739;
+$backgroundpageColor: black;
+
+$gradient-background: #85FFBD;
+
+$gradient: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+
+
+//////////////////////////////
+//
+//  Fonts 
+//
+//////////////////////////////
+
+
+$font-family-text: Arsenal, Roboto, "Helvetica Neue", sans-serif;
+$font-family-titles: 'Monoton', Roboto, sans-serif;
+
+$text-color-base: white;
+
+$font-size-text: 1rem;
+$font-size-large: 2rem;
