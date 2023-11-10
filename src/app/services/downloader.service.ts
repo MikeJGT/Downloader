@@ -21,12 +21,11 @@ export class DownloaderService {
 * @description Start streaming the video from Streaming Service and download it when finish.
 * @param {String} id The Video Id.
 * @param {String} itag The Video Itag.
-* @returns {Observable<Blob>} An Observable with the video.
 */
-  download(id: String, itag: String): Observable<Blob> {
+  download(id: String, itag: String) {
     return this.httpCli.get(`${this.url}${this.apiDownload}/${id}/${itag}`
       , {
-        responseType: 'blob'
+        responseType: 'blob', observe: 'response'
       }
     )
   }
