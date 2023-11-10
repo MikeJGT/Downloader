@@ -63,11 +63,13 @@ export class VideoComponent {
   async download(itag: any): Promise<void> {
     let element: any = document.getElementById('dialogo')!;
     this.showFlag = true;
+    let blob2: any;
     element.show();
     element.addEventListener('click', () => element.close());
+
     this.downloadSV.download(this.id!, itag).subscribe((blob) => {
-      blob = new Blob([blob], { type: "video/mp4" });
-      saveAs(blob, `${this.id}.mp4`);
+      blob2 = webkitURL.createObjectURL(new Blob([blob], { type: "video/mp4" }));
+      saveAs(blob2, `${this.id}.mp4`);
     })
   }
 
