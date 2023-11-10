@@ -65,7 +65,8 @@ export class VideoComponent {
     this.showFlag = true;
     element.show();
     element.addEventListener('click', () => element.close());
-    this.downloadSV.download(this.id!, itag).subscribe((blob: any) => {
+    this.downloadSV.download(this.id!, itag).subscribe((blob) => {
+      blob = blob.slice(0, blob.size, "video/mp4");
       saveAs(blob, `${this.id}.mp4`);
     })
   }

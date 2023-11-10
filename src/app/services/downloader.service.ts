@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.development';
-import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -25,7 +24,7 @@ export class DownloaderService {
   download(id: String, itag: String) {
     return this.httpCli.get(`${this.url}${this.apiDownload}/${id}/${itag}`
       , {
-        responseType: 'blob', observe: 'response'
+        responseType: 'blob'
       }
     )
   }
