@@ -5,7 +5,7 @@ Downloader es una aplicación que te permite realizar descargas de contenido de 
 Con Downloader podrás:
 - Buscar cualquier contenido de la plataforma YouTube.
 - Visualizar el contenido de forma online.
-- Realizar la descarga del audio o del audio y video en diferentes calidades.
+- Realizar la descarga del audio o del audio y video en diferentes calidades. 
 
 ## ¿Cómo puedo usar Downloader?
 Esta aplicación está colgada en internet, puedes acceder a Downloader en el siguiente enlace [link](https://bespoke-lily-50edc2.netlify.app/).
